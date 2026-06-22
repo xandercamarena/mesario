@@ -218,7 +218,7 @@ window.open(
 
 
 
-// MUSICA DE FONDO
+// MUSICA AL INICIAR
 
 window.addEventListener("load",()=>{
 
@@ -229,17 +229,7 @@ let audio=document.getElementById("musica");
 audio.volume=0.5;
 
 
-audio.play().catch(()=>{
-
-
-document.body.addEventListener("click",()=>{
-
 audio.play();
-
-},{once:true});
-
-
-});
 
 
 });
@@ -259,7 +249,7 @@ audio.play();
 
 <!-- MUSICA -->
 
-<audio id="musica" loop>
+<audio id="musica" autoplay loop>
 
 <source src="musica/familia.mp3" type="audio/mpeg">
 
@@ -388,8 +378,6 @@ Son los recuerdos que hemos creado juntos los que hacen que cada día sea especi
 
 
 
-<!-- VIDEO CON PLAY -->
-
 <video
 
 class="w-full h-96 border"
@@ -429,13 +417,6 @@ TODO LO QUE SIENTO POR TI CRECE CADA DÍA, Y NO HAY UN LUGAR MÁS BONITO PARA EX
 <p>
 
 Ocho meses y aún nos encontramos en cada esquina del tiempo, como si el destino hubiera trazado cada paso con precisión milimétrica. No es solo el calendario avanzando, es la historia que hemos tejido con hilos que no se desgastan. Hemos sido la pausa en el caos, el latido constante cuando todo parece incierto, la certeza en medio de lo impredecible.
-Tantas cosas han cambiado desde aquel primer día. Y, sin embargo, hay algo intacto: esa forma tuya de hacer que todo cobre sentido. No es un refugio lo que somos, porque no escapamos de nada. Es más bien un espacio sin muros, donde la realidad no pesa, donde existir se siente ligero, como si el mundo aprendiera a girar a nuestro ritmo.
-Ocho meses y sigo descifrando la forma en que tus gestos cuentan historias sin decir una sola palabra. Sigo encontrando en tus detalles la prueba de que esto no es un instante pasajero, sino un lugar al que siempre vale la pena regresar. Porque hay personas que son brújula, que tienen la habilidad de convertir lo común en extraordinario, y tú eres todo eso y más.
-
-No siempre hemos tenido aguas tranquilas. Ha habido días en los que el horizonte parecía desdibujarse, momentos donde la corriente nos quiso arrastrar. Pero no nos dejamos hundir. Aprendimos a nadar incluso contra la corriente, a encontrar oxígeno en los suspiros entrecortados, a sostenernos con la certeza de que esto es más fuerte que cualquier tempestad.
-Gracias por ser quien eres, por darme un motivo para escribir, para sentir, para creer. No es un aniversario lo que celebramos, es una necesidad que ha tomado forma, un lazo que se ha tejido sin prisas, pero con la seguridad de que el tiempo juega a nuestro favor.
-
-Feliz mesesario, mi amor. Lo que viene será aún más grande.
 
 </p>
 
