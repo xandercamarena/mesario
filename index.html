@@ -25,7 +25,7 @@ color:#5d4037;
 .paper{
 background:#fffaf0;
 border:2px solid #d7ccc8;
-box-shadow:0 10px 25px rgba(0,0,0,.1);
+box-shadow:0 10px:25px rgba(0,0,0,.1);
 }
 
 
@@ -60,11 +60,9 @@ transform:scale(1);
 }
 
 
-
 .bloqueado{
 animation:brillo 2s infinite;
 }
-
 
 
 @keyframes brillo{
@@ -96,7 +94,17 @@ document.getElementById("envelope").style.display="none";
 
 document.getElementById("album").style.display="block";
 
+
+// MUSICA AL ABRIR LA CARTA
+
+let audio=document.getElementById("musica");
+
+audio.volume=0.5;
+
+audio.play();
+
 }
+
 
 
 
@@ -212,27 +220,7 @@ window.open(
 
 );
 
-
 }
-
-
-
-
-// MUSICA AL INICIAR
-
-window.addEventListener("load",()=>{
-
-
-let audio=document.getElementById("musica");
-
-
-audio.volume=0.5;
-
-
-audio.play();
-
-
-});
 
 
 
@@ -249,11 +237,12 @@ audio.play();
 
 <!-- MUSICA -->
 
-<audio id="musica" autoplay loop>
+<audio id="musica" loop>
 
-<source src="music/en familia.mp3" type="audio/mpeg">
+<source src="music/en%20familia.mp3" type="audio/mpeg">
 
 </audio>
+
 
 
 
@@ -282,6 +271,7 @@ Tengo algo para ti... ábrelo
 
 
 </div>
+
 
 
 
@@ -328,12 +318,13 @@ class="w-full h-64 object-cover border-4 border-white shadow-lg">
 
 <p class="text-center italic mt-2">
 
-    TE ESPERARE POR QUE NO HAY ANDA MAS QUE QUIERA QUE CASARME CONTIGO❤️🥹
+TE ESPERARE POR QUE NO HAY ANDA MAS QUE QUIERA QUE CASARME CONTIGO❤️🥹
 
 </p>
 
 
 </div>
+
 
 
 
@@ -366,7 +357,6 @@ ERES LA PERSONA MÁS HERMOSA QUE HE CONOCIDO
 
 
 
-
 <section class="mb-10">
 
 
@@ -375,6 +365,7 @@ ERES LA PERSONA MÁS HERMOSA QUE HE CONOCIDO
 Son los recuerdos que hemos creado juntos los que hacen que cada día sea especial.
 
 </h2>
+
 
 
 
