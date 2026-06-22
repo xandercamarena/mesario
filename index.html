@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nuestra Historia</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lora:wght@400&display=swap');
+
+
+body{
+background:#fdf6e3;
+font-family:'Lora',serif;
+color:#5d4037;
+}
+
+
+.paper{
+background:#fffaf0;
+border:2px solid #d7ccc8;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+
+.cursive{
+font-family:'Dancing Script',cursive;
+}
+
+
+#album{
+display:none;
+}
+
+
+.sorpresa{
+display:none;
+animation:aparecer 1.5s ease;
+}
+
+
+@keyframes aparecer{
+
+from{
+opacity:0;
+transform:scale(.7);
+}
+
+to{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+
+
+.bloqueado{
+animation:brillo 2s infinite;
+}
+
+
+
+@keyframes brillo{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.05);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+</style>
+
+
+
+<script>
+
+
+function abrirAlbum(){
+
+document.getElementById("envelope").style.display="none";
+
+document.getElementById("album").style.display="block";
+
+}
+
+
+
+
+function abrirSorpresa(){
+
+
+let fechaActual = new Date();
+
+let fechaDesbloqueo = new Date("2026-07-06T00:00:00");
+
+
+let mensaje=document.getElementById("mensajeSorpresa");
+
+
+mensaje.style.display="block";
+
+
+
+if(fechaActual >= fechaDesbloqueo){
+
+
+mensaje.innerHTML=`
+
+<div class="p-6 rounded-lg bg-[#fffaf0] shadow-xl">
+
+
+<h2 class="cursive text-4xl mb-4">
+
+✨ La sorpresa se abrió ✨
+
+</h2>
+
+
+<p class="mb-5">
+
+Llegó el momento especial 💛
+
+</p>
+
+
+<button onclick="abrirMapa()"
+
+class="border border-[#8d6e63] px-8 py-3 rounded">
+
+Abrir ubicación ❤️
+
+</button>
+
+
+</div>
+
+`;
+
+
+
+}else{
+
+
+mensaje.innerHTML=`
+
+<div class="p-6 rounded-lg bg-[#fffaf0] shadow-xl bloqueado">
+
+
+<h2 class="cursive text-4xl mb-4">
+
+🔒 Todavía está cerrado
+
+</h2>
+
+
+<p>
+
+Esta sorpresa se desbloqueará el:
+
+</p>
+
+
+<p class="cursive text-3xl mt-3">
+
+6 de Julio del 2026 ✨
+
+</p>
+
+
+<p class="mt-5 italic">
+
+Hay algo especial esperándote... 💛
+
+</p>
+
+
+</div>
+
+`;
+
+}
+
+
+}
+
+
+
+
+function abrirMapa(){
+
+
+window.open(
+
+"https://www.google.com/maps/dir/?api=1&destination=-12.108843082403684,-77.00108068579485",
+
+"_blank"
+
+);
+
+
+}
+
+
+
+
+// MUSICA DE FONDO
+
+window.addEventListener("load",()=>{
+
+
+let audio=document.getElementById("musica");
+
+
+audio.volume=0.5;
+
+
+audio.play().catch(()=>{
+
+
+document.body.addEventListener("click",()=>{
+
+audio.play();
+
+},{once:true});
+
+
+});
+
+
+});
+
+
+
+</script>
+
+
+</head>
+
+
+
+<body class="min-h-screen p-4 md:p-10 flex flex-col items-center">
+
+
+
+<!-- MUSICA -->
+
+<audio id="musica" loop>
+
+<source src="musica/mi_cancion.mp3" type="audio/mpeg">
+
+</audio>
+
+
+
+
+
+<div id="envelope"
+
+class="mt-20 cursor-pointer text-center"
+
+onclick="abrirAlbum()">
+
+
+
+<div class="text-8xl">
+
+✉️
+
+</div>
+
+
+<p class="cursive text-2xl mt-4">
+
+Tengo algo para ti... ábrelo
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div id="album"
+
+class="paper max-w-4xl w-full mx-auto p-8 md:p-12 rounded-sm">
+
+
+
+<h1 class="cursive text-5xl text-center mb-12">
+
+Nuestra Historia
+
+</h1>
+
+
+
+
+
+<section class="mb-10">
+
+
+<h2 class="cursive text-3xl mb-6">
+
+Nuestra Historia Juntos
+
+</h2>
+
+
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+
+
+<div>
+
+<img src="img/yo.jpeg"
+
+class="w-full h-64 object-cover border-4 border-white shadow-lg">
+
+
+<p class="text-center italic mt-2">
+
+TODO A TU LADO ES HERMOSO
+
+</p>
+
+
+</div>
+
+
+
+
+<div>
+
+
+<img src="img/hermosa.jpeg"
+
+class="w-full h-64 object-cover border-4 border-white shadow-lg">
+
+
+<p class="text-center italic mt-2">
+
+ERES LA PERSONA MÁS HERMOSA QUE HE CONOCIDO
+
+</p>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+<section class="mb-10">
+
+
+<h2 class="cursive text-3xl mb-6">
+
+Son los recuerdos que hemos creado juntos los que hacen que cada día sea especial.
+
+</h2>
+
+
+
+<!-- VIDEO CON PLAY -->
+
+<video
+
+class="w-full h-96 border"
+
+controls>
+
+
+<source src="video/para ti.mp4" type="video/mp4">
+
+
+Tu navegador no soporta este video.
+
+
+</video>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="bg-[#f5ece0] p-8 border-l-4 border-[#8d6e63]">
+
+
+<h2 class="cursive text-3xl mb-4">
+
+TODO LO QUE SIENTO POR TI CRECE CADA DÍA, Y NO HAY UN LUGAR MÁS BONITO PARA EXPRESARLO QUE AQUÍ, EN NUESTRA HISTORIA.
+
+</h2>
+
+
+<p>
+
+Ocho meses y aún nos encontramos en cada esquina del tiempo, como si el destino hubiera trazado cada paso con precisión milimétrica. No es solo el calendario avanzando, es la historia que hemos tejido con hilos que no se desgastan. Hemos sido la pausa en el caos, el latido constante cuando todo parece incierto, la certeza en medio de lo impredecible.
+Tantas cosas han cambiado desde aquel primer día. Y, sin embargo, hay algo intacto: esa forma tuya de hacer que todo cobre sentido. No es un refugio lo que somos, porque no escapamos de nada. Es más bien un espacio sin muros, donde la realidad no pesa, donde existir se siente ligero, como si el mundo aprendiera a girar a nuestro ritmo.
+Ocho meses y sigo descifrando la forma en que tus gestos cuentan historias sin decir una sola palabra. Sigo encontrando en tus detalles la prueba de que esto no es un instante pasajero, sino un lugar al que siempre vale la pena regresar. Porque hay personas que son brújula, que tienen la habilidad de convertir lo común en extraordinario, y tú eres todo eso y más.
+
+No siempre hemos tenido aguas tranquilas. Ha habido días en los que el horizonte parecía desdibujarse, momentos donde la corriente nos quiso arrastrar. Pero no nos dejamos hundir. Aprendimos a nadar incluso contra la corriente, a encontrar oxígeno en los suspiros entrecortados, a sostenernos con la certeza de que esto es más fuerte que cualquier tempestad.
+Gracias por ser quien eres, por darme un motivo para escribir, para sentir, para creer. No es un aniversario lo que celebramos, es una necesidad que ha tomado forma, un lazo que se ha tejido sin prisas, pero con la seguridad de que el tiempo juega a nuestro favor.
+
+Feliz mesesario, mi amor. Lo que viene será aún más grande.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<div class="mt-10 text-center">
+
+
+<button onclick="abrirSorpresa()"
+
+class="border border-[#8d6e63] text-[#8d6e63] px-10 py-3 rounded">
+
+
+Presiona para una sorpresa
+
+
+</button>
+
+
+
+
+<div id="mensajeSorpresa"
+
+class="sorpresa mt-8 text-center">
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</body>
+
+</html>
